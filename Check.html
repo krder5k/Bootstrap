@@ -1,95 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Trail Examination</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background-image: url('.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-size: 100%;
     }
 
     .container {
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    .patient-info {
+      background-color: #f8f9fa;
       padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 0;
-    }
-
-    .form-group {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-radius: 10px;
       margin-bottom: 20px;
     }
-
-    label {
-      width: 150px;
-      font-weight: bold;
-    }
-
-    input[type="number"] {
-      width: 100px;
-    }
-
-    .button-container {
-      text-align: right;
-    }
-
-    .calendar {
-      width: 300px;
-      height: 300px;
-      border: 1px solid #ccc;
-      margin-left: auto;
-    }
   </style>
+  <script>
+    function redirectToCheckPage() {
+      window.location.href = "check.html";
+    }
+  </script>
 </head>
 
 <body>
-  <div class="container" id="trail-examination" style="display: none;">
-    <h1>Trail Examination</h1>
-    <div class="form-group">
-      <label for="test1">Test 1:</label>
-      <input type="number" id="test1" min="0" max="100">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="emoji-sunglasses-fill.svg"> Imagitech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Patient number" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" onclick="redirectToCheckPage()">Check</button>
+        </form>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="test2">Test 2:</label>
-      <input type="number" id="test2" min="0" max="100">
-    </div>
-    <div class="form-group">
-      <label for="test3">Test 3:</label>
-      <input type="number" id="test3" min="0" max="100">
-    </div>
-    <p>Book an appointment with Radiologist</p>
-    <div class="button-container">
-      <button id="book-appointment">Book</button>
-    </div>
-    <p>Appointment options:</p>
-    <div class="calendar" id="appointment-calendar"></div>
-    <p>Report from radiologist</p>
-  </div>
+  </nav>
 
-  <form class="container" id="patient-form">
-    <label for="patient-number">Patient number:</label>
-    <input type="text" id="patient-number" placeholder="Enter patient number">
-    <button type="submit">Check</button>
-  </form>
-
-  <script>
-    document.getElementById("patient-form").addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent form submission
-      document.getElementById("patient-form").style.display = "none"; // Hide patient form
-      document.getElementById("trail-examination").style.display = "block"; // Show trail examination section
-    });
-
-    document.getElementById("book-appointment").addEventListener("click", function () {
-      window.location.href = "Check.html"; // Redirect to Check.html when the button is clicked
-    });
-  </script>
-</body>
-
-</html>
+  <div class="container">
+    <div class="patient-info">
+      <h2>Patient Information</h2>
+      <p><strong>Name:</strong> John Doe</p>
+      <p><strong>Age:</strong> 30</p>
+      <p><strong>Gender:</strong> Male</p>
+      <p><strong>Address:</strong
