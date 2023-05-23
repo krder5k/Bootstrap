@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trail Examination</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    label {
+      width: 150px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 100px;
+    }
+
+    .button-container {
+      text-align: right;
+    }
+
+    .calendar {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #ccc;
+      margin-left: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="trail-examination" style="display: none;">
+    <h1>Trail Examination</h1>
+    <div class="form-group">
+      <label for="test1">Test 1:</label>
+      <input type="number" id="test1" min="0" max="100">
+    </div>
+    <div class="form-group">
+      <label for="test2">Test 2:</label>
+      <input type="number" id="test2" min="0" max="100">
+    </div>
+    <div class="form-group">
+      <label for="test3">Test 3:</label>
+      <input type="number" id="test3" min="0" max="100">
+    </div>
+    <p>Book an appointment with Radiologist</p>
+    <div class="button-container">
+      <button id="book-appointment">Book</button>
+    </div>
+    <p>Appointment options:</p>
+    <div class="calendar" id="appointment-calendar"></div>
+    <p>Report from radiologist</p>
+  </div>
+
+  <form class="container" id="patient-form">
+    <label for="patient-number">Patient number:</label>
+    <input type="text" id="patient-number" placeholder="Enter patient number">
+    <button type="submit">Check</button>
+  </form>
+
+  <script>
+    document.getElementById("patient-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form submission
+      document.getElementById("patient-form").style.display = "none"; // Hide patient form
+      document.getElementById("trail-examination").style.display = "block"; // Show trail examination section
+    });
+  </script>
+</body>
+
+</html>
