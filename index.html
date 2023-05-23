@@ -20,6 +20,11 @@
     }
     
   </style>
+  <script>
+    function redirectToCheckPage() {
+      window.location.href = "Check.html";
+    }
+  </script>
 </head>
 
 <body>
@@ -51,7 +56,7 @@
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Patient number" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit" <a href="Check.html">Check</a></button>
+        <button class="btn btn-outline-success" type="submit" onclick="redirectToCheckPage()">Check</button>
       </form>
     </div>
   </div>
